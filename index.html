@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Escola de radioamador</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+header {
+  background-color: #666;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+/* Container for flexboxes */
+section {
+  display: -webkit-flex;
+  display: flex;
+}
+
+/* Style the navigation menu */
+nav {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  background: #ccc;
+  padding: 20px;
+}
+
+/* Style the list inside the menu */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Style the content */
+article {
+  -webkit-flex: 3;
+  -ms-flex: 3;
+  flex: 3;
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+
+/* Style the footer */
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Responsive layout - makes the menu and the content (inside the section) sit on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+.question {
+
+  font-size: 23px;
+
+}
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default radio button */
+.container input {
+  position: absolute;
+  cursor: pointer;
+}
+
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333; 
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+.subnav .subnavbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover {
+  background-color: #ddd;
+}
+
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  
+  width: 100%;
+
+}
+
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+.subnav-content a:hover {
+  
+  color: black;
+}
+
+.subnav:hover .subnav-content {
+  display: block;
+}
+
+.subnav1 {
+  background-color: #3399ff;
+}
+
+.subnav2 {
+  background-color: #00cc99;
+}
+
+.subnav3 {
+  background-color: #ff9999;
+}
+
+.subnav0 {
+  background-color: #99ff99;
+}
+
+
+</style>
+<script type="text/javascript" src="quiz.js"></script>
+<script type="text/javascript" src="simulateQuiz.js"></script>
+<script type="text/javascript" src="loadChapter.js"></script>
+
+<script>
+  window.onload = new loadChapter('home');
+  
+  </script>
+
+
+
+</head>
+<body >
+<meta name="google-site-verification" content="QPZvvVKoBQVlUclLvdWSfEXmJd2sbjQoBMWFfBEKB9c" />
+<header>
+  <h2>Escola de Radioamador</h2>
+  <div class="navbar">
+  <a onclick="new loadChapter('home')" href="#home">Pagina Inicial</a>
+  <div class="subnav subnav0">
+    <button class="subnavbtn subnav0">Tuturial</button>
+    <div class="subnav-content subnav0">
+      <a onclick="new loadChapter('ohm')">Lei de Ohm</a>
+	 <a onclick="new loadChapter('gain')">Ganho (dB)</a>
+	  <a onclick="new loadChapter('SWR')">Onda estacionaria (SWR)</a>
+    <a onclick="new loadChapter('units')">Mult e SubMult. de Unidades</a>
+	<a onclick="new loadChapter('AC')">AC </a>
+	</div>
+  </div> 
+    <div class="subnav subnav1">
+    <button class="subnavbtn">Testes Cat3 (em dedevolvimento)</button>
+    <div class="subnav-content subnav1">
+      <a onclick="new Quiz('question3.json')" href="#">todas as perguntas</a>
+      <a onclick="new simulateQuiz('question3.json')" href="#">Simulador de exame</a>
+
+    </div>
+  </div>
+  
+ 
+  <div class="subnav subnav2">
+    <button class="subnavbtn">Testes Cat2</button>
+    <div class="subnav-content subnav2">
+      <a onclick="new Quiz('question2.json')" href="#">todas as perguntas</a>
+      <a onclick="new simulateQuiz('question2.json')" href="#">Simulador de exame</a>
+
+    </div>
+  </div>
+    <div class="subnav subnav3">
+    <button class="subnavbtn ">Testes Cat1 </button>
+    <div class="subnav-content subnav3">
+      <a onclick="new Quiz('question1.json')" href="#">todas as perguntas</a>
+      <a onclick="new simulateQuiz('question1.json')" href="#">Simulador de exame</a>
+
+    </div>
+  </div>
+</div>
+  
+</header>
+
+<section>
+
+  <article id="welcome">
+
+  </article>
+</section>
+
+<footer>
+<a href="https://github.com/dirtybug/radioAmadorCat2exame/issues" target="_blank">Reportar Problema erro sugestao</a>
+<a href="https://github.com/dirtybug/radioAmadorCat2exame/discussions" target="_blank">forum</a>
+<a href="https://github.com/dirtybug/radioAmadorCat2exame"target="_blank">codigo</a>
+  <p>CR7AZE,CR7ATL,CR7BAX,CR7BCS </p>
+  <p>Julmadeira@yahoo.co.uk</p>
+</footer>
+
+</body>
+</html>
